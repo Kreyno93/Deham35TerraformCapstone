@@ -1,0 +1,6 @@
+instance_type       = "example-instance-type"
+key_pair            = "example-key-pair"
+vpc_cidr            = "example-vpc-cidr"
+public_subnet_cidr  = "example-public-subnet-cidr"
+private_subnet_cidr = "example-private-subnet-cidr"
+aws_region          = "example-aws-region"

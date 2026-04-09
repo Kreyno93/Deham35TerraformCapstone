@@ -1,5 +1,5 @@
 resource "aws_vpc" "wordpress-tf-vpc" {
-  cidr_block = "192.168.0.0/27" # hardcoded
+  cidr_block = var.vpc_cidr
   tags = {
     Name = "wordpress-tf-vpc"
   }
