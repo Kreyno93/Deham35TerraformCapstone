@@ -7,6 +7,10 @@ terraform {
   }
 }
 
+provider "aws" {
+  region = "us-west-2"
+}
+
 resource "aws_vpc" "wordpress-tf-vpc" {
   cidr_block = "192.168.0.0/27"
   tags = {
@@ -123,7 +127,6 @@ resource "aws_instance" "wordpress-tf-instance" {
   key_name                    = "vockey"
   subnet_id                   = aws_subnet.public-tf-wordpress-subnet.id
   vpc_security_group_ids      = [aws_security_group.wordpress-tf-sg.id]
-  depends_on                  = [aws_vpc.wordpress-tf-vpc, aws_subnet.public-tf-wordpress-subnet, aws_security_group.wordpress-tf-sg]
 
   tags = {
     Name = "wordpress-tf-instance"
